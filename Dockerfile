@@ -34,7 +34,17 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     ca-certificates curl bash dnsutils vim-tiny procps jq haproxy \
     postgresql-$PG_MAJOR-postgis-$POSTGIS_MAJOR \
     postgresql-$PG_MAJOR-postgis-$POSTGIS_MAJOR-scripts \    
+    postgresql-server-dev-$PG_MAJOR \   
     && apt autoremove -y
+    
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    cmake \
+    git \
+    pgxnclient \
+    && apt autoremove -y
+
+RUN pgxn install h3    
 
 COPY --from=stolon /go/src/app/bin/* /usr/local/bin/
 COPY --from=postgres_exporter /postgres_exporter /usr/local/bin/
