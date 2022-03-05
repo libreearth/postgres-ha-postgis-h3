@@ -1,6 +1,6 @@
-# High Availability Postgres on Fly.io
+# High Availability Postgres on Fly.io with Postgis and H3
 
-This repo contains all the code and configuration necessary to run a [highly available Postgres cluster](https://fly.io/docs/reference/postgres/) in a Fly.io organization's private network. This source is packaged into [Docker images](https://hub.docker.com/r/flyio/postgres-ha/tags) which allow you to track and upgrade versions cleanly as new features are added.
+This repo contains all the code and configuration necessary to run a [highly available Postgres cluster](https://fly.io/docs/reference/postgres/) with [H3 bindings](https://github.com/bytesandbrains/h3-pg) in a Fly.io organization's private network. This source is packaged into [Docker images](https://hub.docker.com/r/flyio/postgres-ha/tags) which allow you to track and upgrade versions cleanly as new features are added.
 
 If you just want to get a standard Postgres standalone or highly-available setup on Fly, [check out the docs](https://fly.io/docs/reference/postgres/).
 ## Customizing cluster behavior
